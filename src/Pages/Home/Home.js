@@ -1,5 +1,7 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
+import Slider from '../Slider/Slider';
 import './Home.css'
 
 const Home = () => {
@@ -8,10 +10,11 @@ const Home = () => {
             <div>
                 <Header></Header>
             </div>
-            <div className='bg' style={{ 
-                backgroundImage: `url("https://thumbs.dreamstime.com/b/assorted-sports-equipment-black-11153245.jpg")`
-                }}>
-                Hello World
+            <div>
+            <Slider></Slider>
+            </div>
+            <div>
+                <Outlet></Outlet>
             </div>
         </div>
     );

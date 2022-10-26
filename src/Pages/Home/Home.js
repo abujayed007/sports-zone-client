@@ -8,13 +8,7 @@ const Home = () => {
     return (
         <div>
             <div>
-                <Header></Header>
-            </div>
-            <div>
             <Slider></Slider>
-            </div>
-            <div>
-                <Outlet></Outlet>
             </div>
         </div>
     );

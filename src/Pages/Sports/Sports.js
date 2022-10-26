@@ -1,16 +1,31 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import SportItem from '../SportItem/SportItem';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import LeftSide from '../LeftSide/LeftSide';
 
 const Sports = () => {
     const sports = useLoaderData()
     console.log(sports)
     return (
-        <div>
-            <h2>Our All Packages</h2>
+        
+    <Row className='mt-2'>
+        <Col sm={4}>
+            <h1>ALl Categories</h1>
             {
-
+                sports.map(sport => <LeftSide key={sport.id} sport={sport}></LeftSide>)
             }
-        </div>
+        </Col>
+        <Col className='row row-cols-md-2 row-cols-1' sm={8}> 
+             {
+                sports.map(sport => <SportItem key={sport.id} sport={sport}></SportItem>)
+             }
+        </Col>
+    </Row>
+            
+            
     );
 };
 

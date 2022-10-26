@@ -12,7 +12,7 @@ const Sports = () => {
     return (
         
     <Row className='mt-2'>
-        <Col sm={4}>
+        <Col className="shadow-lg" sm={4}>
             <h1>ALl Categories</h1>
             {
                 sports.map(sport => <LeftSide key={sport.id} sport={sport}></LeftSide>)

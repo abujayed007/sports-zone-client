@@ -15,15 +15,14 @@ const Header = () => {
               <Link to='/sports' className='pe-2'>Sports</Link>
             </Nav>
             <Nav>
-              <Link className='pe-2'>
+              <Link className='pe-2' to='/login'>
                Log In
               </Link>
-              <Link>
+              <Link to='register'>
                 Sign Up
               </Link>
             </Nav>
           </Navbar.Collapse>
-          
       </Navbar>
     );
 };

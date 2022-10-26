@@ -10,10 +10,7 @@ body a{
     color: white;
     font-weight: 600;
 }
-body a:hover{
-  background-color: burlywood;
-  border-radius: 5px;
-}
+
 @media screen and (max-width:550px) {
     .bg{
    

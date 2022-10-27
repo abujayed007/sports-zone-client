@@ -7,7 +7,7 @@ const LeftSide = ({sport}) => {
 
     return (
         <div className='name'> 
-            <Link className='fs-3' to={`/sports/${name}`}>{sport.name}</Link>
+            <Link className='fs-3 shadow-lg rounded px-5  mt-5 bg-warning' to={`/sports/${name}`}>{sport.name}</Link>
         </div>
     );
 };

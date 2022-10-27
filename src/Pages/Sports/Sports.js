@@ -11,8 +11,8 @@ const Sports = () => {
     console.log(sports)
     return (
         
-    <Row className='mt-2'>
-        <Col className="shadow-lg" sm={4}>
+    <Row className='mt-2 p-4'>
+        <Col className="shadow-lg text-center p-3 rounded" sm={4}>
             <h1>ALl Categories</h1>
             {
                 sports.map(sport => <LeftSide key={sport.id} sport={sport}></LeftSide>)

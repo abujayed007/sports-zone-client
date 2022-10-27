@@ -1,4 +1,10 @@
 .name a{
-    color: rgb(25, 47, 168);
+    color: rgb(25, 111, 168);
+
+
+}
+.name a:hover{
+    color: rgb(25, 168, 97);
+    
 
 }

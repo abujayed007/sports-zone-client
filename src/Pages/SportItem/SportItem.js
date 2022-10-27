@@ -9,8 +9,8 @@ const SportItem = ({ sport }) => {
 
     return (
         <div className='col p-2'>
-            <Card className='' style={{ height: '500px' }}>
-                <Card.Header>{name}</Card.Header>
+            <Card style={{ height: '500px' }}>
+                <Card.Header className='text-center'>{name}</Card.Header>
                 <Card.Img variant="top" style={{ height: '200px' }} src={image} />
                 <Card.Body>
                     <Card.Title style={{ color: 'darkolivegreen' }} className='fs-5'>{title}</Card.Title>

@@ -1,0 +1,16 @@
+.dark-theme{
+    --main-heading : white;
+    --heading-clr : black;
+    --btn-bg-color : lightblue;
+    --btn-text-color: rgba(173, 26, 26, 0.74);
+    background-color: black;
+    
+}
+.light-theme{
+    --main-heading : black;
+    --heading-clr : white;
+    --para-clr : black;
+    --btn-bg-color : lightblue;
+    --btn-text-color: black;
+    background-color: white;
+}

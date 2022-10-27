@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button, Image } from 'react-bootstrap';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,6 +8,12 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 const Header = () => {
   const {user, logOut}  = useContext(AuthContext)
 
+  const [theme, setTheme] = useState('light-theme')
+
+  useEffect(() =>{
+    document.body.className = theme
+  },[theme])
+
   const handleLogOut = () =>{
     logOut()
     .then(() =>{
@@ -15,6 +21,15 @@ const Header = () => {
     })
     .catch(error => console.error(error))
   }
+  const toggleTheme =() =>{
+    if (theme === 'dark-theme'){
+      setTheme('light-theme')
+    }
+    else{
+      setTheme('dark-theme')
+    }
+  }
+
     return (
         <Navbar className='p-4' expand="lg" bg="dark" variant="light">
           <Image style={{height:"65px"}} src='https://i0.wp.com/www.sportszone.com.ng/wp-content/uploads/2022/06/SPORTS-ZONE-LOGO.png?fit=500%2C500&ssl=1'></Image>
@@ -24,6 +39,7 @@ const Header = () => {
             <Nav className="me-auto">
               <Link to='/sports' className='pe-2'>Sports</Link>
             </Nav>
+            <Link onClick={toggleTheme} className='me-3'>Toggle Theme</Link>
             <Link to='/blogs' className='me-3'> Blogs</Link>
             <Nav>
             <>

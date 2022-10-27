@@ -23,7 +23,7 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 const user = result.user
-                console.log(user)
+                form.reset()
                 navigate(from, {replace: true})
             })
             .catch(error => console.error(error))

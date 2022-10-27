@@ -15,7 +15,7 @@ export const routes = createBrowserRouter([
             path:'/sports',
             element:<PrivateRoute><Sports></Sports></PrivateRoute>,
             loader: () => {
-            return fetch('http://localhost:5000/sports')
+            return fetch('https://programming-website-server.vercel.app/sports')
         }
         },
         {
@@ -25,7 +25,7 @@ export const routes = createBrowserRouter([
             path:'/sports/:name', 
             element:<PrivateRoute><SportsDetails></SportsDetails></PrivateRoute>,
             loader: ({params}) => {
-                return fetch(`http://localhost:5000/sports/${params.name}`)
+                return fetch(`https://programming-website-server.vercel.app/sports/${params.name}`)
             }
         },
         {

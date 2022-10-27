@@ -5,12 +5,13 @@ import Register from "../../Pages/Login and Register/Register/Register";
 import Main from "../../Pages/Main/Main";
 import Sports from "../../Pages/Sports/Sports";
 import SportsDetails from "../../Pages/SportsDetails/SportsDetails";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {path:'/', element:<Main></Main>, children:[
         {
             path:'/sports',
-            element:<Sports></Sports>,
+            element:<PrivateRoute><Sports></Sports></PrivateRoute>,
             loader: () => {
             return fetch('http://localhost:5000/sports')
         }
@@ -20,7 +21,7 @@ export const routes = createBrowserRouter([
         },
         {
             path:'/sports/:name', 
-            element:<SportsDetails></SportsDetails>,
+            element:<PrivateRoute><SportsDetails></SportsDetails></PrivateRoute>,
             loader: ({params}) => {
                 return fetch(`http://localhost:5000/sports/${params.name}`)
             }

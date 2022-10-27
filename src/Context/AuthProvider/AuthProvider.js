@@ -26,6 +26,9 @@ const AuthProvider = ({children}) => {
     const googleLogin = (provider) =>{
         return signInWithPopup(auth, provider)
     }
+    const githubLogin = (provider) =>{
+        return signInWithPopup(auth, provider)
+    }
   
     
     useEffect(()=>{
@@ -36,7 +39,7 @@ const AuthProvider = ({children}) => {
             unsubscribe()
         }
     },[])
-    const authInfo = {user, logIn, signUp, googleLogin, logOut}
+    const authInfo = {user, logIn, signUp, googleLogin, githubLogin, logOut}
 
     return (
         <div>

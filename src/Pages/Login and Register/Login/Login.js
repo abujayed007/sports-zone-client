@@ -5,10 +5,10 @@ import AuthProvider, { AuthContext } from '../../../Context/AuthProvider/AuthPro
 import { FaFacebookSquare, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import { ButtonGroup } from 'react-bootstrap';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { logIn, googleLogin } = useContext(AuthContext)
+    const { logIn, googleLogin, githubLogin } = useContext(AuthContext)
 
     const navigate = useNavigate()
 
@@ -34,7 +34,21 @@ const Login = () => {
             console.log(user)
         })
         .catch(error => console.error(error))
+
     }
+    const githubProvider = new GithubAuthProvider()
+
+    const handleGithubsignIn = () =>{
+        githubLogin(githubProvider)
+        .then(result =>{
+            const user = result.user;
+            console.log(user)
+            navigate('/')
+
+        })
+        .catch(error => console.error(error))
+    }
+
     return (
         <div className='d-flex justify-content-center mt-5'>
             <Form onSubmit={handleSubmit} style={{ width: '500px' }} className="shadow-lg p-5 rounded">
@@ -54,7 +68,7 @@ const Login = () => {
               <div className='d-flex justify-content-center'>
               <ButtonGroup className='mb-4' vertical>
                     <Button onClick={handleGoogleSignIn} variant='outline-primary'><FaGoogle></FaGoogle> Log in Google</Button>
-                    <Button className='mt-3' variant='outline-dark'><FaGithub></FaGithub> Log in Github</Button>
+                    <Button onClick={handleGithubsignIn} className='mt-3' variant='outline-dark'><FaGithub></FaGithub> Log in Github</Button>
                 </ButtonGroup>
               </div>
             </Form>

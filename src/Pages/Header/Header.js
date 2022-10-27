@@ -34,7 +34,7 @@ const Header = () => {
                 <Button onClick={handleLogOut} variant='light'>Log Out</Button>
                 </> :
                 <>
-                  <Link to='/login'>Log In</Link>
+                  <Link className='me-3' to='/login'>Log In</Link>
                   <Link to='/register'>Register</Link>
                 </>
               } 

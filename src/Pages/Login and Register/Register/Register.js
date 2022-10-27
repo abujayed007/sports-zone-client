@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { Card } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
     const {signUp, updateUserProfile} = useContext(AuthContext)
+
+    const [error, setError] = useState('')
+
     const handleSubmit  = (e) =>{
         e.preventDefault()
         const form = e.target
@@ -20,7 +24,10 @@ const Register = () => {
             handleUpdateProfile(name, photoURL)
             form.reset()
         })
-        .catch(error => console.error(error))
+        .catch(error =>{ 
+            console.error(error)
+            setError(error.message)
+        })
 
     }
 
@@ -59,6 +66,9 @@ const Register = () => {
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>
+                <Card.Text className='text-danger'>
+                    {error}
+                </Card.Text>
             </Form>
         </div>
     );

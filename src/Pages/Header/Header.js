@@ -24,6 +24,7 @@ const Header = () => {
             <Nav className="me-auto">
               <Link to='/sports' className='pe-2'>Sports</Link>
             </Nav>
+            <Link to='/blogs' className='me-3'> Blogs</Link>
             <Nav>
             <>
               {

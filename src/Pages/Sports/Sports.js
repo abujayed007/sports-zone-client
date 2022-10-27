@@ -14,9 +14,11 @@ const Sports = () => {
     <Row className='mt-2 p-4'>
         <Col className="shadow-lg text-center p-3 rounded" sm={4}>
             <h1>ALl Categories</h1>
-            {
+          
+           {
                 sports.map(sport => <LeftSide key={sport.id} sport={sport}></LeftSide>)
             }
+           
         </Col>
         <Col className='row row-cols-md-2 row-cols-1' sm={8}> 
              {

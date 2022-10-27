@@ -23,7 +23,6 @@ const SportItem = ({ sport }) => {
                                 <p> <strong>Health Benifits:</strong> {benifits}</p>
                         }
                     </Card.Text>
-                    <Button variant="primary">Details</Button>
                 </Card.Body>
             </Card>
         </div>

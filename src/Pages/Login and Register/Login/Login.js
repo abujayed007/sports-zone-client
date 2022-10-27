@@ -1,14 +1,16 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import AuthProvider, { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import { FaFacebookSquare, FaGithub, FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ButtonGroup } from 'react-bootstrap';
+import { ButtonGroup, Card } from 'react-bootstrap';
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const { logIn, googleLogin, githubLogin } = useContext(AuthContext)
+    const { logIn, googleLogin, githubLogin, user } = useContext(AuthContext)
+
+    const [error, setError] = useState('')
 
     const navigate = useNavigate()
 
@@ -24,9 +26,13 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 form.reset()
+                setError('')
                 navigate(from, {replace: true})
             })
-            .catch(error => console.error(error))
+            .catch(error => 
+                {console.error(error)
+                setError(error.message)
+            })
     }
     const googleProvider  = new GoogleAuthProvider()
 
@@ -66,8 +72,13 @@ const Login = () => {
                 </Form.Group>
                 <p>Don't have any account <Link className='text-info' to='/register'>Register Now</Link></p>
                 <Button variant="primary" type="submit">
-                    Submit
+                    Log In
                 </Button>
+               
+                    <Card.Text className='text-danger'>
+                        {error}
+                    </Card.Text>
+                
               <div className='d-flex justify-content-center'>
               <ButtonGroup className='mb-4' vertical>
                     <Button onClick={handleGoogleSignIn} variant='outline-primary'><FaGoogle></FaGoogle> Log in Google</Button>

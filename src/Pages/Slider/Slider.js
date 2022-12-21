@@ -18,7 +18,7 @@ const Slider = () => {
       <div>
         <Carousel infiniteLoop autoPlay>
           <div className="image">
-            <img src="https://welcome.setantasports.com/wp-content/uploads/2022/07/2@2x_gradient@2x-copy1.webp" alt="" />
+            <img src="https://www.sportune.com.au/content/uploads/sites/7/2021/03/swimmer-PDQ7PMU-1920x1282.jpg" alt="" />
           </div>
           <div className="image">
             <img src="https://d2560u4h06m0te.cloudfront.net/images/2022/1/1/121818_003_basket.JPG" alt="" />

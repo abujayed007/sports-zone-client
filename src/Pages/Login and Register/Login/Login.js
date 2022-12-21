@@ -33,6 +33,9 @@ const Login = () => {
                 {console.error(error)
                 setError(error.message)
             })
+            if(password.length <6){
+                setError('Password must be 6 charecter')
+            }
     }
     const googleProvider  = new GoogleAuthProvider()
 
@@ -40,6 +43,7 @@ const Login = () => {
         googleLogin(googleProvider)
         .then(result =>{
             const user = result.user;
+            navigate(from, {replace: true})
             console.log(user)
         })
         .catch(error => console.error(error))
@@ -51,6 +55,7 @@ const Login = () => {
         githubLogin(githubProvider)
         .then(result =>{
             const user = result.user;
+            navigate(from, {replace: true})
             console.log(user)
             navigate('/')
 
@@ -69,15 +74,16 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control name="password" type="password" placeholder="Password" />
+                    <Card.Text className='text-danger'>
+                        {error}
+                    </Card.Text>
                 </Form.Group>
                 <p>Don't have any account <Link className='text-info' to='/register'>Register Now</Link></p>
                 <Button variant="primary" type="submit">
                     Log In
                 </Button>
                
-                    <Card.Text className='text-danger'>
-                        {error}
-                    </Card.Text>
+                    
                 
               <div className='d-flex justify-content-center'>
               <ButtonGroup className='mb-4' vertical>

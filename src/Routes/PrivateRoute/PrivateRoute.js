@@ -9,7 +9,7 @@ const PrivateRoute = ({children}) => {
   const location = useLocation()
 
   if(loading){
-    return <Spinner style={{marginTop:'200px'}} className='d-flex justify-content-center' animation="border" variant="success" />
+    return <Spinner style={{marginTop:'200px'}} className='d-flex mx-auto' animation="border" variant="success" />
   }
 
   if(!user){

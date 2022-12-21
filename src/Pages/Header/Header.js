@@ -33,7 +33,7 @@ const Header = () => {
     return (
         <Navbar className='p-4' expand="lg" bg="dark" variant="light">
           <Image style={{height:"65px"}} src='https://i0.wp.com/www.sportszone.com.ng/wp-content/uploads/2022/06/SPORTS-ZONE-LOGO.png?fit=500%2C500&ssl=1'></Image>
-          <Navbar.Brand className='text-danger' to='/'>Sports Zone</Navbar.Brand>
+          <Link className='text-danger btn' to='/'>Sports Zone</Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">

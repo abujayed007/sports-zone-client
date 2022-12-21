@@ -1,0 +1,13 @@
+.footer {
+    height: 250px;
+    padding-bottom: 70px;
+
+}
+
+.footer h5{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    color: royalblue;
+}
